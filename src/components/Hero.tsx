@@ -42,8 +42,22 @@ export default function Hero() {
               ))}
             </span>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-lg mb-10">
-            Architecting high-availability, ISO-certified digital ecosystems for hospitals and diagnostic labs. Secure, interoperable, and engineered for clinical precision at an enterprise scale.
+          <p className="text-lg text-slate-600 leading-relaxed max-w-lg mb-10 overflow-hidden">
+            {"Architecting high-availability, ISO-certified digital ecosystems for hospitals and diagnostic labs. Secure, interoperable, and engineered for clinical precision at an enterprise scale.".split(" ").map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ 
+                  duration: 0.4, 
+                  delay: 0.5 + (i * 0.03), 
+                  ease: "easeOut" 
+                }}
+                className="mr-[0.25em] inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
           </p>
           <div className="flex flex-wrap gap-4">
             <motion.button
