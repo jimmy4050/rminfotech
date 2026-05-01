@@ -38,7 +38,7 @@ export default function Hero() {
             <span className="text-[10px] font-bold text-accent uppercase tracking-widest leading-none">ISO 9001:2015 Certified</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1] tracking-tighter mb-8 flex flex-col">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-1 -mb-1">
               <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -48,7 +48,7 @@ export default function Hero() {
                 Digital
               </motion.span>
             </div>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-1 -mb-1">
               <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -58,7 +58,7 @@ export default function Hero() {
                 Transformation
               </motion.span>
             </div>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-1 -mb-1">
               <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -68,7 +68,7 @@ export default function Hero() {
                 for
               </motion.span>
             </div>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-1 -mb-1">
               <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -78,7 +78,7 @@ export default function Hero() {
                 Modern
               </motion.span>
             </div>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-2 -mb-2">
               <motion.span
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
