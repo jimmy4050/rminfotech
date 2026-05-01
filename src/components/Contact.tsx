@@ -84,7 +84,7 @@ export default function Contact() {
                 },
                 {
                   label: "Call Us",
-                  value: "+91 123 456 7890",
+                  value: "+91 81436 51772",
                   icon: <Phone className="w-5 h-5 text-accent" />
                 }
               ].map((item, index) => (
