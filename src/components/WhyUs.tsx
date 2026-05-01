@@ -4,23 +4,23 @@ import { ShieldCheck, Zap, BarChart3, Globe2 } from 'lucide-react';
 export default function WhyUs() {
   const features = [
     {
-      title: 'Enterprise Security',
-      desc: 'Robust data encryption and multi-layer security protocols ensuring patient data privacy.',
+      title: 'Zero-Trust Security',
+      desc: 'Multi-layer AES-256 encryption for data at rest and TLS 1.3 for data in transit, ensuring SOC2 and HIPAA level compliance across all data nodes.',
       icon: <ShieldCheck className="w-8 h-8 text-accent" />
     },
     {
-      title: 'High Performance',
-      desc: 'Optimized systems for zero-lag experience even with massive concurrent user loads.',
+      title: 'High Availability',
+      desc: 'Redundant server clusters with 99.9% uptime SLA, leveraging edge computing to maintain zero-latency responsiveness during peak outpatient loads.',
       icon: <Zap className="w-8 h-8 text-accent" />
     },
     {
-      title: 'Actionable Insights',
-      desc: 'Advanced analytics dashboards providing executive-level insights for growth.',
+      title: 'Interoperability',
+      desc: 'Seamless data exchange via HL7, FHIR, and DICOM protocols, allowing diverse diagnostic hardware to communicate instantly with the core HIMS.',
       icon: <BarChart3 className="w-8 h-8 text-accent" />
     },
     {
-      title: 'Scalable Growth',
-      desc: 'Modular architecture that grows with your organization from clinic to healthcare chain.',
+      title: 'Global Scalability',
+      desc: 'Modular micro-services architecture that supports infinite vertical and horizontal scaling, supporting your expansion from single clinic to global chains.',
       icon: <Globe2 className="w-8 h-8 text-accent" />
     }
   ];

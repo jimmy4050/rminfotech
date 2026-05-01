@@ -43,7 +43,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-lg mb-10">
-            Empowering hospitals and diagnostic labs with enterprise-grade IT ecosystems. Scalable, secure, and clinical-ready.
+            Architecting high-availability, ISO-certified digital ecosystems for hospitals and diagnostic labs. Secure, interoperable, and engineered for clinical precision at an enterprise scale.
           </p>
           <div className="flex flex-wrap gap-4">
             <motion.button

@@ -73,14 +73,19 @@ export default function About() {
             <div className="space-y-4">
               {[
                 {
-                  title: "Our Mission",
-                  desc: "To deliver seamless, secure, and smart technology that transforms patient care.",
+                  title: "Strategic Mission",
+                  desc: "To deliver mission-critical, HIPAA-compliant technology frameworks that enable healthcare providers to focus exclusively on patient outcomes without operational friction.",
                   icon: <Target className="w-5 h-5 text-accent" />
                 },
                 {
-                  title: "Our Vision",
-                  desc: "To be the global benchmark for healthcare digital transformation and excellence.",
+                  title: "Global Vision",
+                  desc: "Establishing the gold standard for interoperable healthcare ecosystems where data flows securely across the entire clinical continuum, from diagnostics to discharge.",
                   icon: <Lightbulb className="w-5 h-5 text-accent" />
+                },
+                {
+                  title: "Technical Excellence",
+                  desc: "Utilizing ISO 9001:2015 certified processes and Lean Agile methodologies to deploy high-availability, low-latency infrastructure for tier-1 medical institutions.",
+                  icon: <Users className="w-5 h-5 text-accent" />
                 }
               ].map((item, index) => (
                 <motion.div 
@@ -89,18 +94,45 @@ export default function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + index * 0.1 }}
-                  className="flex gap-4 p-5 rounded-2xl bg-white border border-slate-200 shadow-sm"
+                  className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="bg-slate-50 p-2 rounded-lg self-start">
+                  <div className="bg-slate-50 p-3 rounded-xl self-start group-hover:bg-accent/10 transition-colors">
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-slate-900 mb-1">{item.title}</h3>
-                    <p className="text-sm text-slate-500 font-medium leading-normal">{item.desc}</p>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                    <p className="text-sm text-slate-500 font-medium leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="pt-6 border-t border-slate-100"
+            >
+              <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Our Technology Pillars</h4>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  <span className="text-xs font-bold text-slate-700">HL7 / DICOM Standards</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  <span className="text-xs font-bold text-slate-700">Multi-Cloud Strategy</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  <span className="text-xs font-bold text-slate-700">Micro-Service Architecture</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                  <span className="text-xs font-bold text-slate-700">AES-256 Data Security</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
