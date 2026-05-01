@@ -79,6 +79,7 @@ export default function Services() {
               id={item.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5, borderColor: 'rgb(8, 145, 178)' }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-accent/30 transition-all group cursor-default"

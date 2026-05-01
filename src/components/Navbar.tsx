@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight, Activity } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,10 +23,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white border-b border-slate-200 py-4 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-white font-bold transition-transform group-hover:scale-105">RM</div>
-          <span className="text-xl font-bold tracking-tight uppercase">RM INFOTECH <span className="text-accent">SOLUTIONS</span></span>
-        </div>
+        <Logo />
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">

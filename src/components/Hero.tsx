@@ -16,8 +16,31 @@ export default function Hero() {
           <div className="inline-flex items-center px-3 py-1 bg-accent/5 border border-accent/10 rounded-full mb-6">
             <span className="text-[10px] font-bold text-accent uppercase tracking-widest leading-none">ISO 9001:2015 Certified</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-8">
-            Digital Transformation for <span className="text-accent">Modern Healthcare.</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-8 flex flex-wrap">
+            {"Digital Transformation for ".split(" ").map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="mr-[0.25em]"
+              >
+                {word}
+              </motion.span>
+            ))}
+            <span className="text-accent flex flex-wrap">
+              {"Modern Healthcare.".split(" ").map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: (3 + i) * 0.1 }}
+                  className="mr-[0.25em]"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed max-w-lg mb-10">
             Empowering hospitals and diagnostic labs with enterprise-grade IT ecosystems. Scalable, secure, and clinical-ready.

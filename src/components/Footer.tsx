@@ -1,15 +1,19 @@
-import { Activity, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { motion } from 'motion/react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
     <footer className="bg-white pt-20 pb-10 border-t border-slate-200">
-      <div className="section-padding">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="section-padding"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-white font-bold">RM</div>
-              <span className="text-lg font-bold tracking-tight uppercase">RM INFOTECH <span className="text-accent">SOLUTIONS</span></span>
-            </div>
+            <Logo />
             <p className="text-slate-500 text-sm font-medium max-w-xs leading-relaxed">
               Empowering healthcare excellence through digital innovation and enterprise IT ecosystems since 2011.
             </p>
@@ -25,9 +29,15 @@ export default function Footer() {
           <div>
             <h4 className="text-slate-900 font-bold mb-6 text-sm">Our Solutions</h4>
             <ul className="space-y-3">
-              {['HIMS Core Suite', 'LIMS Advanced', 'Enterprise ERP', 'Cloud Migration', 'Custom Development'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-slate-500 text-sm font-medium hover:text-accent transition-colors">{item}</a>
+              {[
+                { name: 'HIMS Core Suite', href: '#services' },
+                { name: 'LIMS Advanced', href: '#services' },
+                { name: 'Enterprise ERP', href: '#services' },
+                { name: 'Cloud Migration', href: '#services' },
+                { name: 'Custom Development', href: '#services' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-slate-500 text-sm font-medium hover:text-accent transition-colors">{item.name}</a>
                 </li>
               ))}
             </ul>
@@ -36,9 +46,15 @@ export default function Footer() {
           <div>
             <h4 className="text-slate-900 font-bold mb-6 text-sm">Company</h4>
             <ul className="space-y-3">
-              {['About Us', 'Success Stories', 'Partnerships', 'Support Hub', 'Contact Us'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-slate-500 text-sm font-medium hover:text-accent transition-colors">{item}</a>
+              {[
+                { name: 'About Us', href: '#about' },
+                { name: 'Success Stories', href: '#about' },
+                { name: 'Partnerships', href: '#about' },
+                { name: 'Support Hub', href: '#contact' },
+                { name: 'Contact Us', href: '#contact' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-slate-500 text-sm font-medium hover:text-accent transition-colors">{item.name}</a>
                 </li>
               ))}
             </ul>
@@ -70,7 +86,7 @@ export default function Footer() {
             <a href="#" className="hover:text-primary">Governance</a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
