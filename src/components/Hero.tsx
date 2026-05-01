@@ -1,14 +1,35 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, ChevronRight, Database } from 'lucide-react';
+import { useRef } from 'react';
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const textX = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-white">
+    <section ref={containerRef} className="relative pt-32 pb-20 overflow-hidden bg-white">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50 -z-10 rounded-l-[100px] hidden lg:block" />
       
+      {/* Marquee Background Text */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full opacity-[0.03] pointer-events-none -z-10 overflow-hidden whitespace-nowrap">
+        <motion.div 
+          style={{ x: textX }}
+          className="text-[200px] font-black uppercase leading-none"
+        >
+          Digital Transformation Digital Transformation Digital Transformation
+        </motion.div>
+      </div>
+
       <div className="section-padding grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
+          style={{ opacity }}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -16,48 +37,60 @@ export default function Hero() {
           <div className="inline-flex items-center px-3 py-1 bg-accent/5 border border-accent/10 rounded-full mb-6">
             <span className="text-[10px] font-bold text-accent uppercase tracking-widest leading-none">ISO 9001:2015 Certified</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-8 flex flex-wrap">
-            {"Digital Transformation for ".split(" ").map((word, i) => (
+          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1] tracking-tighter mb-8 flex flex-col">
+            <div className="overflow-hidden">
               <motion.span
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                className="mr-[0.25em] inline-block"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="block"
               >
-                {word}
+                Digital
               </motion.span>
-            ))}
-            <span className="text-accent flex flex-wrap">
-              {"Modern Healthcare.".split(" ").map((word, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: (3 + i) * 0.1, ease: "easeOut" }}
-                  className="mr-[0.25em] inline-block"
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="block"
+              >
+                Transformation
+              </motion.span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="block text-slate-400"
+              >
+                for
+              </motion.span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="block text-accent"
+              >
+                Modern
+              </motion.span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="block text-accent"
+              >
+                Healthcare.
+              </motion.span>
+            </div>
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-lg mb-10 overflow-hidden">
-            {"Architecting high-availability, ISO-certified digital ecosystems for hospitals and diagnostic labs. Secure, interoperable, and engineered for clinical precision at an enterprise scale.".split(" ").map((word, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ 
-                  duration: 0.4, 
-                  delay: 0.5 + (i * 0.03), 
-                  ease: "easeOut" 
-                }}
-                className="mr-[0.25em] inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
+          <p className="text-lg text-slate-600 leading-relaxed max-w-lg mb-10">
+            Architecting high-availability, ISO-certified digital ecosystems for hospitals and diagnostic labs. Secure, interoperable, and engineered for clinical precision at an enterprise scale.
           </p>
           <div className="flex flex-wrap gap-4">
             <motion.button
