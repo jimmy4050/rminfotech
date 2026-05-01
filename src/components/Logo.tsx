@@ -35,12 +35,17 @@ export default function Logo({ light = false }: { light?: boolean }) {
         </motion.div>
       </div>
 
-      <div className="flex flex-col">
-        <span className={`text-xl font-extrabold tracking-tighter uppercase leading-none ${light ? 'text-white' : 'text-slate-900'}`}>
-          RM <span className="text-accent">INFOTECH</span>
-        </span>
-        <span className={`text-[10px] font-bold tracking-[0.2em] uppercase ${light ? 'text-slate-400' : 'text-slate-500'}`}>
-          Solutions
+      <div className="flex flex-col pt-1">
+        <div className="flex items-baseline gap-2">
+          <span className={`font-cursive text-3xl text-accent ${light ? 'drop-shadow-sm' : ''}`}>
+            RM
+          </span>
+          <span className={`text-xl font-extrabold tracking-tighter uppercase leading-none ${light ? 'text-white' : 'text-slate-900'}`}>
+            Infotech Solutions
+          </span>
+        </div>
+        <span className={`text-[9px] font-bold tracking-[0.4em] uppercase -mt-0.5 ${light ? 'text-slate-400' : 'text-slate-500'}`}>
+          Pvt Ltd
         </span>
       </div>
     </div>

@@ -20,10 +20,10 @@ export default function Hero() {
             {"Digital Transformation for ".split(" ").map((word, i) => (
               <motion.span
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="mr-[0.25em]"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                className="mr-[0.25em] inline-block"
               >
                 {word}
               </motion.span>
@@ -32,10 +32,10 @@ export default function Hero() {
               {"Modern Healthcare.".split(" ").map((word, i) => (
                 <motion.span
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: (3 + i) * 0.1 }}
-                  className="mr-[0.25em]"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: (3 + i) * 0.1, ease: "easeOut" }}
+                  className="mr-[0.25em] inline-block"
                 >
                   {word}
                 </motion.span>
