@@ -21,9 +21,18 @@ export default function Logo({ light = false }: LogoProps) {
             stroke="url(#logoGradient)"
             strokeWidth="4"
             strokeLinecap="round"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            initial={{ pathLength: 0, opacity: 0, rotate: 0 }}
+            animate={{ 
+              pathLength: 1, 
+              opacity: 1,
+              rotate: 360
+            }}
+            transition={{ 
+              pathLength: { duration: 1.5, ease: "easeInOut" },
+              opacity: { duration: 1.5 },
+              rotate: { duration: 20, repeat: Infinity, ease: "linear" }
+            }}
+            style={{ originX: "50px", originY: "50px" }}
           />
           
           <defs>
